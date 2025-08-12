@@ -1,0 +1,55 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/xreal_tech_faq?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&createDatabaseIfNotExist=true
+    username: xreal
+    password: Xreal2025
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: update  # update 不会删除数据，只会更新表结构
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+    defer-datasource-initialization: false
+  
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+      continue-on-error: true
+  
+  elasticsearch:
+    uris: https://localhost:9200
+    username: elastic
+    password: s0Fov=RW4zmt4s_Pntd7
+    connection-timeout: 10s
+    socket-timeout: 30s
+  
+  data:
+    elasticsearch:
+      repositories:
+        enabled: true
+  
+  ai:
+    openai:
+      api-key: sk-K6iNOdpFtpndLcX4P3WLjtkurQyfAyJ6HNUdisVgggzzWONl
+      base-url: https://api.openai-hub.com
+      embedding:
+        options:
+          model: text-embedding-3-small
+    
+    vectorstore:
+      elasticsearch:
+        index-name: xreal_tech_faq
+        dimensions: 1536
+
+server:
+  port: 8080
+
+logging:
+  level:
+    com.xreal: DEBUG
+    org.springframework.data.elasticsearch: DEBUG

@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "DbApplication",
+            "request": "launch",
+            "mainClass": "com.xreal.db.DbApplication",
+            "projectName": "db",
+            "javaExec": "C:\\Program Files\\Java\\jdk-22\\bin\\java.exe",
+            "vmArgs": "-Dspring.profiles.active=default",
+            "env": {
+                "JAVA_HOME": "C:\\Program Files\\Java\\jdk-22"
+            }
+        }
+    ]
+}
