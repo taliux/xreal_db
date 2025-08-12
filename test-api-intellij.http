@@ -1,27 +1,23 @@
 ### Test API - Xreal FAQ Management System
-### Usage: Install REST Client plugin in IDE, then click "Send Request" above each request
+### For IntelliJ IDEA HTTP Client
 
-### Variables
-@baseUrl = http://localhost:8080
-@contentType = application/json
+### ================== Tag Management API Tests ==================
 
-### ================== 标签管理接口测试 ==================
-
-### 1. 创建标签 - Xreal Air
-POST {{baseUrl}}/tags
-Content-Type: {{contentType}}
+### 1. Create Tag - Xreal Air
+POST http://localhost:8080/tags
+Content-Type: application/json
 
 {
-  "name": "Xreal Air",
+  "name": "Xreal Air 2 Pro Test",
   "description": "Xreal Air AR glasses",
   "active": true
 }
 
 ###
 
-### 2. 创建标签 - Xreal Air 2
-POST {{baseUrl}}/tags
-Content-Type: {{contentType}}
+### 2. Create Tag - Xreal Air 2
+POST http://localhost:8080/tags
+Content-Type: application/json
 
 {
   "name": "Xreal Air 2",
@@ -31,9 +27,9 @@ Content-Type: {{contentType}}
 
 ###
 
-### 3. 创建标签 - Beam
-POST {{baseUrl}}/tags
-Content-Type: {{contentType}}
+### 3. Create Tag - Beam
+POST http://localhost:8080/tags
+Content-Type: application/json
 
 {
   "name": "Beam",
@@ -43,9 +39,9 @@ Content-Type: {{contentType}}
 
 ###
 
-### 4. 创建标签 - Setup
-POST {{baseUrl}}/tags
-Content-Type: {{contentType}}
+### 4. Create Tag - Setup
+POST http://localhost:8080/tags
+Content-Type: application/json
 
 {
   "name": "Setup",
@@ -55,9 +51,9 @@ Content-Type: {{contentType}}
 
 ###
 
-### 5. 创建标签 - iPhone
-POST {{baseUrl}}/tags
-Content-Type: {{contentType}}
+### 5. Create Tag - iPhone
+POST http://localhost:8080/tags
+Content-Type: application/json
 
 {
   "name": "iPhone",
@@ -67,9 +63,9 @@ Content-Type: {{contentType}}
 
 ###
 
-### 6. 创建标签 - Android
-POST {{baseUrl}}/tags
-Content-Type: {{contentType}}
+### 6. Create Tag - Android
+POST http://localhost:8080/tags
+Content-Type: application/json
 
 {
   "name": "Android",
@@ -79,9 +75,9 @@ Content-Type: {{contentType}}
 
 ###
 
-### 7. 创建标签 - Troubleshooting (禁用状态)
-POST {{baseUrl}}/tags
-Content-Type: {{contentType}}
+### 7. Create Tag - Troubleshooting (disabled)
+POST http://localhost:8080/tags
+Content-Type: application/json
 
 {
   "name": "Troubleshooting",
@@ -91,19 +87,19 @@ Content-Type: {{contentType}}
 
 ###
 
-### 8. 获取所有标签
-GET {{baseUrl}}/tags
+### 8. Get All Tags
+GET http://localhost:8080/tags
 
 ###
 
-### 9. 获取激活的标签
-GET {{baseUrl}}/tags/active
+### 9. Get Active Tags
+GET http://localhost:8080/tags/active
 
 ###
 
-### 10. 更新标签
-PUT {{baseUrl}}/tags/Beam
-Content-Type: {{contentType}}
+### 10. Update Tag
+PUT http://localhost:8080/tags/Beam
+Content-Type: application/json
 
 {
   "name": "Beam",
@@ -113,16 +109,16 @@ Content-Type: {{contentType}}
 
 ###
 
-### 11. 删除标签（注意：如果标签已被FAQ使用，会失败）
-DELETE {{baseUrl}}/tags/Troubleshooting
+### 11. Delete Tag
+DELETE http://localhost:8080/tags/Troubleshooting
 
 ###
 
-### ================== FAQ管理接口测试 ==================
+### ================== FAQ Management API Tests ==================
 
-### 12. 创建FAQ - Xreal Air设置指南
-POST {{baseUrl}}/faqs
-Content-Type: {{contentType}}
+### 12. Create FAQ - Xreal Air Setup Guide
+POST http://localhost:8080/faqs
+Content-Type: application/json
 
 {
   "question": "How to set up Xreal Air for the first time?",
@@ -136,9 +132,9 @@ Content-Type: {{contentType}}
 
 ###
 
-### 13. 创建FAQ - iPhone连接指南
-POST {{baseUrl}}/faqs
-Content-Type: {{contentType}}
+### 13. Create FAQ - iPhone Connection Guide
+POST http://localhost:8080/faqs
+Content-Type: application/json
 
 {
   "question": "How to connect Xreal Air 2 to iPhone?",
@@ -152,9 +148,9 @@ Content-Type: {{contentType}}
 
 ###
 
-### 14. 创建FAQ - Android连接
-POST {{baseUrl}}/faqs
-Content-Type: {{contentType}}
+### 14. Create FAQ - Android Compatibility
+POST http://localhost:8080/faqs
+Content-Type: application/json
 
 {
   "question": "Which Android phones are compatible with Xreal glasses?",
@@ -168,9 +164,9 @@ Content-Type: {{contentType}}
 
 ###
 
-### 15. 创建FAQ - Beam使用指南
-POST {{baseUrl}}/faqs
-Content-Type: {{contentType}}
+### 15. Create FAQ - Beam Usage Guide
+POST http://localhost:8080/faqs
+Content-Type: application/json
 
 {
   "question": "How to use Beam with Xreal glasses?",
@@ -184,9 +180,9 @@ Content-Type: {{contentType}}
 
 ###
 
-### 16. 创建FAQ - 故障排除（非激活状态）
-POST {{baseUrl}}/faqs
-Content-Type: {{contentType}}
+### 16. Create FAQ - Troubleshooting (inactive)
+POST http://localhost:8080/faqs
+Content-Type: application/json
 
 {
   "question": "What to do if the display is not showing?",
@@ -200,49 +196,49 @@ Content-Type: {{contentType}}
 
 ###
 
-### 17. 获取所有FAQ（默认分页）
-GET {{baseUrl}}/faqs
+### 17. Get All FAQs (default pagination)
+GET http://localhost:8080/faqs
 
 ###
 
-### 18. 获取所有FAQ（自定义分页和排序）
-GET {{baseUrl}}/faqs?page=0&size=5&sort=timestamp,desc
+### 18. Get All FAQs (custom pagination and sorting)
+GET http://localhost:8080/faqs?page=0&size=5&sort=timestamp,desc
 
 ###
 
-### 19. 获取激活的FAQ
-GET {{baseUrl}}/faqs?active=true
+### 19. Get Active FAQs
+GET http://localhost:8080/faqs?active=true
 
 ###
 
-### 20. 获取非激活的FAQ
-GET {{baseUrl}}/faqs?active=false
+### 20. Get Inactive FAQs
+GET http://localhost:8080/faqs?active=false
 
 ###
 
-### 21. 根据标签搜索FAQ - 单个标签
-GET {{baseUrl}}/faqs/search?tags=Setup
+### 21. Search FAQs by Tag - Single Tag
+GET http://localhost:8080/faqs/search?tags=Setup
 
 ###
 
-### 22. 根据标签搜索FAQ - 多个标签（任一匹配）
-GET {{baseUrl}}/faqs/search?tags=iPhone&tags=Android
+### 22. Search FAQs by Tag - Multiple Tags
+GET http://localhost:8080/faqs/search?tags=iPhone&tags=Android
 
 ###
 
-### 23. 根据标签搜索激活的FAQ
-GET {{baseUrl}}/faqs/search?tags=Beam&active=true
+### 23. Search Active FAQs by Tag
+GET http://localhost:8080/faqs/search?tags=Beam&active=true
 
 ###
 
-### 24. 获取特定FAQ（需要替换{id}为实际ID）
-GET {{baseUrl}}/faqs/1
+### 24. Get Specific FAQ (replace {id} with actual ID)
+GET http://localhost:8080/faqs/1
 
 ###
 
-### 25. 更新FAQ（需要替换{id}为实际ID）
-PUT {{baseUrl}}/faqs/1
-Content-Type: {{contentType}}
+### 25. Update FAQ (replace {id} with actual ID)
+PUT http://localhost:8080/faqs/1
+Content-Type: application/json
 
 {
   "question": "How to set up Xreal Air for the first time? [Updated]",
@@ -256,21 +252,21 @@ Content-Type: {{contentType}}
 
 ###
 
-### 26. 删除特定FAQ（需要替换{id}为实际ID）
-DELETE {{baseUrl}}/faqs/1
+### 26. Delete Specific FAQ (replace {id} with actual ID)
+DELETE http://localhost:8080/faqs/1
 
 ###
 
-### 27. 删除所有FAQ（谨慎使用！）
-DELETE {{baseUrl}}/faqs/all
+### 27. Delete All FAQs (use with caution!)
+DELETE http://localhost:8080/faqs/all
 
 ###
 
-### ================== 错误测试用例 ==================
+### ================== Error Test Cases ==================
 
-### 28. 创建FAQ - 缺少必填字段（应返回400错误）
-POST {{baseUrl}}/faqs
-Content-Type: {{contentType}}
+### 28. Create FAQ - Missing Required Field (should return 400 error)
+POST http://localhost:8080/faqs
+Content-Type: application/json
 
 {
   "answer": "This FAQ is missing the question field"
@@ -278,9 +274,9 @@ Content-Type: {{contentType}}
 
 ###
 
-### 29. 创建重复标签（应返回409冲突错误）
-POST {{baseUrl}}/tags
-Content-Type: {{contentType}}
+### 29. Create Duplicate Tag (should return 409 conflict error)
+POST http://localhost:8080/tags
+Content-Type: application/json
 
 {
   "name": "Xreal Air",
@@ -290,14 +286,14 @@ Content-Type: {{contentType}}
 
 ###
 
-### 30. 获取不存在的FAQ（应返回404错误）
-GET {{baseUrl}}/faqs/99999
+### 30. Get Non-existent FAQ (should return 404 error)
+GET http://localhost:8080/faqs/99999
 
 ###
 
-### 31. 更新不存在的FAQ（应返回404错误）
-PUT {{baseUrl}}/faqs/99999
-Content-Type: {{contentType}}
+### 31. Update Non-existent FAQ (should return 404 error)
+PUT http://localhost:8080/faqs/99999
+Content-Type: application/json
 
 {
   "question": "Non-existent FAQ",
@@ -308,7 +304,7 @@ Content-Type: {{contentType}}
 
 ###
 
-### 32. 删除不存在的标签（应返回404错误）
-DELETE {{baseUrl}}/tags/NonExistentTag
+### 32. Delete Non-existent Tag (should return 404 error)
+DELETE http://localhost:8080/tags/NonExistentTag
 
 ###
