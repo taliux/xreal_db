@@ -4,11 +4,11 @@
 ### ================== Tag Management API Tests ==================
 
 ### 1. Create Tag - Xreal Air
-POST http://localhost:8080/tags
+POST http://localhost:8999/tags
 Content-Type: application/json
 
 {
-  "name": "Xreal Air 2 Pro Test",
+  "name": "Xreal Air 2 Pro",
   "description": "Xreal Air AR glasses",
   "active": true
 }
@@ -16,7 +16,7 @@ Content-Type: application/json
 ###
 
 ### 2. Create Tag - Xreal Air 2
-POST http://localhost:8080/tags
+POST http://localhost:8999/tags
 Content-Type: application/json
 
 {
@@ -28,7 +28,7 @@ Content-Type: application/json
 ###
 
 ### 3. Create Tag - Beam
-POST http://localhost:8080/tags
+POST http://localhost:8999/tags
 Content-Type: application/json
 
 {
@@ -40,7 +40,7 @@ Content-Type: application/json
 ###
 
 ### 4. Create Tag - Setup
-POST http://localhost:8080/tags
+POST http://localhost:8999/tags
 Content-Type: application/json
 
 {
@@ -52,7 +52,7 @@ Content-Type: application/json
 ###
 
 ### 5. Create Tag - iPhone
-POST http://localhost:8080/tags
+POST http://localhost:8999/tags
 Content-Type: application/json
 
 {
@@ -64,7 +64,7 @@ Content-Type: application/json
 ###
 
 ### 6. Create Tag - Android
-POST http://localhost:8080/tags
+POST http://localhost:8999/tags
 Content-Type: application/json
 
 {
@@ -76,7 +76,7 @@ Content-Type: application/json
 ###
 
 ### 7. Create Tag - Troubleshooting (disabled)
-POST http://localhost:8080/tags
+POST http://localhost:8999/tags
 Content-Type: application/json
 
 {
@@ -88,17 +88,17 @@ Content-Type: application/json
 ###
 
 ### 8. Get All Tags
-GET http://localhost:8080/tags
+GET http://localhost:8999/tags
 
 ###
 
 ### 9. Get Active Tags
-GET http://localhost:8080/tags/active
+GET http://localhost:8999/tags/active
 
 ###
 
 ### 10. Update Tag
-PUT http://localhost:8080/tags/Beam
+PUT http://localhost:8999/tags/Beam
 Content-Type: application/json
 
 {
@@ -110,14 +110,14 @@ Content-Type: application/json
 ###
 
 ### 11. Delete Tag
-DELETE http://localhost:8080/tags/Troubleshooting
+DELETE http://localhost:8999/tags/Troubleshooting
 
 ###
 
 ### ================== FAQ Management API Tests ==================
 
 ### 12. Create FAQ - Xreal Air Setup Guide
-POST http://localhost:8080/faqs
+POST http://localhost:8999/faqs
 Content-Type: application/json
 
 {
@@ -133,7 +133,7 @@ Content-Type: application/json
 ###
 
 ### 13. Create FAQ - iPhone Connection Guide
-POST http://localhost:8080/faqs
+POST http://localhost:8999/faqs
 Content-Type: application/json
 
 {
@@ -143,13 +143,13 @@ Content-Type: application/json
   "url": "https://xreal.com/support/iphone-compatibility",
   "active": true,
   "comment": "iPhone connection guide with adapter requirements",
-  "tags": ["Xreal Air 2", "iPhone", "Setup"]
+  "tags": ["Xreal Air 2"]
 }
 
 ###
 
 ### 14. Create FAQ - Android Compatibility
-POST http://localhost:8080/faqs
+POST http://localhost:8999/faqs
 Content-Type: application/json
 
 {
@@ -165,7 +165,7 @@ Content-Type: application/json
 ###
 
 ### 15. Create FAQ - Beam Usage Guide
-POST http://localhost:8080/faqs
+POST http://localhost:8999/faqs
 Content-Type: application/json
 
 {
@@ -181,7 +181,7 @@ Content-Type: application/json
 ###
 
 ### 16. Create FAQ - Troubleshooting (inactive)
-POST http://localhost:8080/faqs
+POST http://localhost:8999/faqs
 Content-Type: application/json
 
 {
@@ -197,47 +197,47 @@ Content-Type: application/json
 ###
 
 ### 17. Get All FAQs (default pagination)
-GET http://localhost:8080/faqs
+GET http://localhost:8999/faqs
 
 ###
 
 ### 18. Get All FAQs (custom pagination and sorting)
-GET http://localhost:8080/faqs?page=0&size=5&sort=timestamp,desc
+GET http://localhost:8999/faqs?page=0&size=5&sort=timestamp,desc
 
 ###
 
 ### 19. Get Active FAQs
-GET http://localhost:8080/faqs?active=true
+GET http://localhost:8999/faqs?active=true
 
 ###
 
 ### 20. Get Inactive FAQs
-GET http://localhost:8080/faqs?active=false
+GET http://localhost:8999/faqs?active=false
 
 ###
 
 ### 21. Search FAQs by Tag - Single Tag
-GET http://localhost:8080/faqs/search?tags=Setup
+GET http://localhost:8999/faqs/search?tags=Setup
 
 ###
 
 ### 22. Search FAQs by Tag - Multiple Tags
-GET http://localhost:8080/faqs/search?tags=iPhone&tags=Android
+GET http://localhost:8999/faqs/search?tags=iPhone&tags=Android
 
 ###
 
 ### 23. Search Active FAQs by Tag
-GET http://localhost:8080/faqs/search?tags=Beam&active=true
+GET http://localhost:8999/faqs/search?tags=Beam&active=true
 
 ###
 
 ### 24. Get Specific FAQ (replace {id} with actual ID)
-GET http://localhost:8080/faqs/1
+GET http://localhost:8999/faqs/1
 
 ###
 
 ### 25. Update FAQ (replace {id} with actual ID)
-PUT http://localhost:8080/faqs/1
+PUT http://localhost:8999/faqs/1
 Content-Type: application/json
 
 {
@@ -253,19 +253,19 @@ Content-Type: application/json
 ###
 
 ### 26. Delete Specific FAQ (replace {id} with actual ID)
-DELETE http://localhost:8080/faqs/1
+DELETE http://localhost:8999/faqs/1
 
 ###
 
 ### 27. Delete All FAQs (use with caution!)
-DELETE http://localhost:8080/faqs/all
+DELETE http://localhost:8999/faqs/all
 
 ###
 
 ### ================== Error Test Cases ==================
 
 ### 28. Create FAQ - Missing Required Field (should return 400 error)
-POST http://localhost:8080/faqs
+POST http://localhost:8999/faqs
 Content-Type: application/json
 
 {
@@ -275,7 +275,7 @@ Content-Type: application/json
 ###
 
 ### 29. Create Duplicate Tag (should return 409 conflict error)
-POST http://localhost:8080/tags
+POST http://localhost:8999/tags
 Content-Type: application/json
 
 {
@@ -287,12 +287,12 @@ Content-Type: application/json
 ###
 
 ### 30. Get Non-existent FAQ (should return 404 error)
-GET http://localhost:8080/faqs/99999
+GET http://localhost:8999/faqs/99999
 
 ###
 
 ### 31. Update Non-existent FAQ (should return 404 error)
-PUT http://localhost:8080/faqs/99999
+PUT http://localhost:8999/faqs/99999
 Content-Type: application/json
 
 {
@@ -305,6 +305,6 @@ Content-Type: application/json
 ###
 
 ### 32. Delete Non-existent Tag (should return 404 error)
-DELETE http://localhost:8080/tags/NonExistentTag
+DELETE http://localhost:8999/tags/NonExistentTag
 
 ###

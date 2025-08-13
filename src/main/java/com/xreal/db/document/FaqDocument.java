@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
-@Document(indexName = "xreal_faq")
+@Document(indexName = "#{@environment.getProperty('spring.ai.vectorstore.elasticsearch.index-name')}", createIndex = false)
 @Data
 @Builder
 @NoArgsConstructor
@@ -24,6 +24,7 @@ public class FaqDocument {
     @Field(type = FieldType.Text)
     private String content;
     
+    // 注意: 维度在ElasticsearchIndexConfig中动态配置
     @Field(type = FieldType.Dense_Vector)
     private float[] embedding;
     

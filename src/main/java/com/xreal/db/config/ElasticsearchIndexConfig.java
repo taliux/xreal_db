@@ -34,6 +34,10 @@ public class ElasticsearchIndexConfig {
                 
                 CreateIndexRequest createIndexRequest = CreateIndexRequest.of(c -> c
                     .index(indexName)
+                    .settings(s -> s
+                        .numberOfShards("1")
+                        .numberOfReplicas("0")
+                    )
                     .mappings(m -> m
                         .properties("id", p -> p.keyword(k -> k))
                         .properties("content", p -> p.text(t -> t))

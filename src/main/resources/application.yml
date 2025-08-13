@@ -22,9 +22,9 @@ spring:
       continue-on-error: true
   
   elasticsearch:
-    uris: https://localhost:9200
+    uris: http://localhost:9200
     username: elastic
-    password: s0Fov=RW4zmt4s_Pntd7
+    password: Xreal2025
     connection-timeout: 10s
     socket-timeout: 30s
   
@@ -47,7 +47,7 @@ spring:
         dimensions: 1536
 
 server:
-  port: 8080
+  port: 8999
 
 logging:
   level:
