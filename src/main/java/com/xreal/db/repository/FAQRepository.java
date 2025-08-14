@@ -9,12 +9,18 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 @Repository
 public interface FAQRepository extends JpaRepository<FAQ, Long> {
     
     Page<FAQ> findByActive(Boolean active, Pageable pageable);
+    
+    Optional<FAQ> findByQuestion(String question);
+    
+    @Query("SELECT f FROM FAQ f WHERE LOWER(TRIM(f.question)) = LOWER(TRIM(:question))")
+    Optional<FAQ> findByQuestionIgnoreCase(@Param("question") String question);
     
     @Query("SELECT DISTINCT f FROM FAQ f JOIN f.faqTags ft WHERE ft.tag.name IN :tags")
     Page<FAQ> findByTagNamesIn(@Param("tags") Set<String> tags, Pageable pageable);

@@ -1,0 +1,10 @@
+### Upload Excel file with FAQ and Tag data
+POST http://localhost:8999/api/excel/upload
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="test_data.xlsx"
+Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+
+< ./test_data.xlsx
+------WebKitFormBoundary7MA4YWxkTrZu0gW--

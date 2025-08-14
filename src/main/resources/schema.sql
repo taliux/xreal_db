@@ -39,9 +39,9 @@ INSERT IGNORE INTO tag (name, description, active) VALUES
 ('XREAL One', 'XREAL One smart glasses', TRUE),
 ('XREAL One Pro', 'XREAL One Pro smart glasses', TRUE),
 ('XREAL Air', 'XREAL Air smart glasses', TRUE),
-('XREAL Air 2', 'XREAL Air2 smart glasses', TRUE),
-('XREAL Air 2 Pro', 'XREAL Air2 Pro smart glasses', TRUE),
-('XREAL Air 2 Ultra', 'XREAL Air2 Ultra smart glasses', TRUE),
+('XREAL Air2', 'XREAL Air2 smart glasses', TRUE),
+('XREAL Air2 Pro', 'XREAL Air2 Pro smart glasses', TRUE),
+('XREAL Air2 Ultra', 'XREAL Air2 Ultra smart glasses', TRUE),
 ('XREAL Beam', 'XREAL Beam accessory', TRUE),
 ('XREAL Beam Pro', 'XREAL Beam Pro accessory', TRUE),
 ('XREAL Light', 'XREAL Light device', TRUE);
